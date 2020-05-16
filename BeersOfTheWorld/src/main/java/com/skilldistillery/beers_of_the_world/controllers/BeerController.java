@@ -23,10 +23,20 @@ public class BeerController {
 		return "index";
 	}
 	
-	@RequestMapping(path= {"getBeer.do"})
-	public String findBeer(@RequestParam("id")int id, Model model) {
+	@RequestMapping(path="getBeer.do")
+	public String getBeer(@RequestParam("bid")int id, Model model) {
 		Beer beer = dao.findById(id);
 		model.addAttribute("beer", beer);
 		return "beerinfo";
+	}
+	
+	@RequestMapping(path="deleteBeer.do")
+	public String deleteBeer(@RequestParam("bid") int id, Model model) {
+		boolean delete = dao.deleteBeer(id);
+		if(delete) {
+			return "deletesuccess";
+		} else {
+			return "deleteerror";
+		}
 	}
 }

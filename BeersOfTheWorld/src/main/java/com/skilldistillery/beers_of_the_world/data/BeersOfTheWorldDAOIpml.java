@@ -28,5 +28,53 @@ public class BeersOfTheWorldDAOIpml implements BeersOfTheWorldDAO{
 		beers = em.createQuery(jpql, Beer.class).getResultList();
 		return beers;
 	}
+
+	@Override
+	public boolean deleteBeer(int id) {
+		Beer beer = em.find(Beer.class, id);
+		em.remove(beer);
+		em.flush();
+		em.close();
+		return !(em.contains(beer));
+		
+		
+		//@Override
+		//public Boolean destroy(int id) {
+//			EntityManager em = emf.createEntityManager();
+//			em.getTransaction().begin();
+		//	
+//			Actor deleteActor = em.find(Actor.class, id);
+//			em.remove(deleteActor);
+//			Boolean deleted = em.contains(deleteActor);
+		//	
+//			em.flush();
+//			em.getTransaction().commit();
+//			em.close();
+//			return !deleted;
+		//}
+	}
 	
 }
+
+//@Override
+//public Actor update(int id, Actor actor) {
+//	EntityManager em = emf.createEntityManager();
+//	em.getTransaction().begin();
+//	
+//	Actor newActor = em.find(Actor.class, id);
+//	newActor.setFirstName("Joe");
+//	newActor.setLastName("Exotic");
+//	
+//	em.flush();
+//	em.getTransaction().commit();
+//	em.close();
+//	return newActor;
+//}
+//
+
+
+
+
+
+
+
