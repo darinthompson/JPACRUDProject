@@ -54,7 +54,17 @@ public class BeerController {
 		return "deletesuccess";
 	}
 	
+	@RequestMapping(path="createBeer.do", method = RequestMethod.POST)
+	public String createBeer(Beer beer, Model model) {
+		Beer newBeer = dao.createBeer(beer);
+		model.addAttribute("beer", newBeer);
+		return "deletesuccess";
+	}
 	
+	@RequestMapping(path="createBeer.do", method = RequestMethod.GET)
+	public String gotToCreateBeer(Beer beer, Model model) {
+		return "addbeer";
+	}
 	
 	
 	

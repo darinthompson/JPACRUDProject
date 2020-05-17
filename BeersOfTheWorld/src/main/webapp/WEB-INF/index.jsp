@@ -14,10 +14,13 @@
 			value="Show Beer" />
 	</form>
 	<c:forEach var="beer" items="${beers}">
-
-		<ul>
-			<li><a href="getBeer.do?bid=${beer.id}">${beer.name}</a></li>
-		</ul>
+		<c:if test="${not empty beer}">
+			<ul>
+				<li><a href="getBeer.do?bid=${beer.id}">${beer.name}</a></li>
+			</ul>
+		</c:if>
 	</c:forEach>
+
+	<a href="createBeer.do">ADD BEER</a>
 </body>
 </html>

@@ -12,13 +12,14 @@
 	<form action="editBeer.do" method="POST">
 		Beer Name<input type="text" value="${beer.name}" name="name" />
 		Brewery<input type="text" value="${beer.brewery}" name="brewery" />
-		<p><strong>Description:</strong></p> <input type="text" value="${beer.description}" name="description" />${beer.description}
-		<p><strong>Style:</strong> <input type="text" value="${beer.style}" name="description" />${beer.style}</p>
-		<p><strong>Rating:</strong> <input type="text" value="${beer.rating}" name="description" />${beer.rating}</p>
-		<p><strong>ABV:</strong> <input type="text" value="${beer.abv}" name="description" />${beer.abv}</p>
-		<p><strong>SRM:</strong> <input type="text" value="${beer.srm}" name="description" />${beer.srm}</p>
+		Style<input type="text" value="${beer.style}" name="style" />
+		Description<input type="text" value="${beer.description}" name="description" />
+		ABV<input type="text" value="${beer.abv}" name="abv" />
+		SRM<input type="text" value="${beer.srm}" name="srm" />
+		Rating<input type="text" value="${beer.rating}" name="rating" />
+		
 		<p>${beer.id}</p>
-		<input type="hidden" name="bid" value="${beer.id }"/>
+		<input type="hidden" name="bid" value="${beer.id}"/>
 		<input type="submit" value="SUBMIT" />
 	</form>
 </body>

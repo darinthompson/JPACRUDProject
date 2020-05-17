@@ -40,13 +40,29 @@ public class BeersOfTheWorldDAOIpml implements BeersOfTheWorldDAO{
 	
 	@Override
 	public Beer updateBeer(int id, Beer _beer) {
+		System.out.println("*****************" + id);
+		System.out.println(_beer);
 		Beer beer = em.find(Beer.class, id);
+		beer.setId(id);
 		beer.setName(_beer.getName());
 		beer.setDescription(_beer.getDescription());
+		beer.setBrewery(_beer.getBrewery());
+		beer.setSrm(_beer.getSrm());
+		beer.setRating(_beer.getRating());
+		beer.setStyle(_beer.getStyle());
+		beer.setAbv(_beer.getAbv());
 		em.flush();
 		em.close();
 		return beer;
 		
+	}
+	
+	@Override
+	public Beer createBeer(Beer beer) {
+		 em.persist(beer);
+		 em.flush();
+		 em.close();
+		 return beer;
 	}
 	
 }

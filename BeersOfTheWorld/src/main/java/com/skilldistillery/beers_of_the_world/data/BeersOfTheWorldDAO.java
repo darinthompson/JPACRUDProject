@@ -9,4 +9,5 @@ public interface BeersOfTheWorldDAO {
 	public List<Beer> getBeers();
 	public boolean deleteBeer(int id);
 	public Beer updateBeer(int id, Beer beer);
+	public Beer createBeer(Beer beer);
 }
