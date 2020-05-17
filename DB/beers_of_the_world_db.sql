@@ -55,6 +55,7 @@ USE `beers_of_the_world_db`;
 INSERT INTO `beer` (`id`, `name`, `brewery`, `description`, `rating`, `abv`, `srm`, `style`) VALUES (1, 'beer', 'homebrew', 'The homiest home brew. With notes of toffee and carmel', 5.5, 7.2, 45, 'lager');
 INSERT INTO `beer` (`id`, `name`, `brewery`, `description`, `rating`, `abv`, `srm`, `style`) VALUES (2, 'Mountain Brew', 'Foot Hill brewery', 'Dewiest Mountain Brew', 10, 5.6, 56, 'ipa');
 INSERT INTO `beer` (`id`, `name`, `brewery`, `description`, `rating`, `abv`, `srm`, `style`) VALUES (3, 'Juicy Hazy', 'Sierra Nevada', 'Juice bomb, most fought over', 8.5, 7.0, 65, 'ipa');
+INSERT INTO `beer` (`id`, `name`, `brewery`, `description`, `rating`, `abv`, `srm`, `style`) VALUES (4, 'Two Hearted Ale', 'Belles', 'Deep amber slightly hazy ipa', 10.0, 7.0, 77, 'ipa');
 
 COMMIT;
 
