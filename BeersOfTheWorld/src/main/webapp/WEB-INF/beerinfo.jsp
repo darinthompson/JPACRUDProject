@@ -17,5 +17,6 @@
 	<p><strong>SRM:</strong> ${beer.srm}</p>
 	<a href="deleteBeer.do?bid=${beer.id}">Delete</a>
 	<a href="editBeer.do?bid=${beer.id}">Edit</a>
+	<a href="home.do">GO HOME</a>
 </body>
 </html>
