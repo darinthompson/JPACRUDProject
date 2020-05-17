@@ -8,7 +8,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<p>${beer.name}</p>
+	<p><strong>Name:</strong> ${beer.name}</p>
+	<p><strong>Brewery:</strong> ${beer.brewery}</p>
+	<p><strong>Description:</strong> ${beer.description}</p>
+	<p><strong>Style:</strong> ${beer.style}</p>
+	<p><strong>ABV:</strong> ${beer.abv}</p>
+	<p><strong>Rating:</strong> ${beer.rating}</p>
+	<p><strong>SRM:</strong> ${beer.srm}</p>
 	<a href="deleteBeer.do?bid=${beer.id}">Delete</a>
+	<a href="editBeer.do?bid=${beer.id}">Edit</a>
 </body>
 </html>

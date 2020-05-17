@@ -8,4 +8,5 @@ public interface BeersOfTheWorldDAO {
 	public Beer findById(int id);
 	public List<Beer> getBeers();
 	public boolean deleteBeer(int id);
+	public Beer updateBeer(int id, Beer beer);
 }

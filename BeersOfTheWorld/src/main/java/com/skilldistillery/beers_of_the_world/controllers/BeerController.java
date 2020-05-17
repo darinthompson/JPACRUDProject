@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.beers_of_the_world.data.BeersOfTheWorldDAO;
@@ -39,4 +40,27 @@ public class BeerController {
 			return "deleteerror";
 		}
 	}
+	
+	@RequestMapping(path="editBeer.do", method = RequestMethod.GET)
+	public String editBeer(@RequestParam("bid") int id, Model model) {
+		Beer beer = dao.findById(id);
+		model.addAttribute("beer", beer);
+		return "editbeer";
+	}
+	
+	@RequestMapping(path="editBeer.do", method = RequestMethod.POST)
+	public String submitEdit(@RequestParam("bid") int id, Beer beer, Model model) {
+		dao.updateBeer(id, beer);
+		return "deletesuccess";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

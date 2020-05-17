@@ -8,5 +8,6 @@
 </head>
 <body>
 	<h1>Delete Success</h1>
+	<a href="home.do">GO HOME</a>
 </body>
 </html>
