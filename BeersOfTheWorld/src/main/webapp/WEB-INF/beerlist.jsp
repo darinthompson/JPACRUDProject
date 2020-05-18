@@ -78,9 +78,9 @@
 					<div class="col-lg-8 col-md-10 mx-auto">
 						<div class="post-preview">
 							<a href="getBeer.do?bid=${beer.id}">
-								<h2 class="post-title">${beer.name}-${beer.style}</h2>
+								<h2 class="post-title">${beer.name}</h2>
 							</a>
-							<p class="post-meta">${beer.description}</p>
+							<p class="post-meta">${beer.style}</p>
 							<hr>
 						</div>
 					</div>

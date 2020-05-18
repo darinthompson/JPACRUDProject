@@ -69,7 +69,7 @@
 						<strong>SRM:</strong> ${beer.srm}
 					</p>
 					<a href="deleteBeer.do?bid=${beer.id}">Delete | </a> <a
-						href="editBeer.do?bid=${beer.id}">Edit | </a> <a href="home.do">Home</a>
+						href="editBeer.do?bid=${beer.id}">Edit | </a> <a href="listBeers.do">Home</a>
 					<hr>
 				</div>
 			</div>
