@@ -30,7 +30,7 @@ public class BeerController {
 		if(beer == null) {
 			return "error";
 		} else {
-			return "beerinfo";
+			return "info";
 		}
 	}
 	
@@ -54,14 +54,14 @@ public class BeerController {
 	@RequestMapping(path="editBeer.do", method = RequestMethod.POST)
 	public String submitEdit(@RequestParam("bid") int id, Beer beer, Model model) {
 		dao.updateBeer(id, beer);
-		return "deletesuccess";
+		return "success";
 	}
 	
 	@RequestMapping(path="createBeer.do", method = RequestMethod.POST)
 	public String createBeer(Beer beer, Model model) {
 		Beer newBeer = dao.createBeer(beer);
 		model.addAttribute("beer", newBeer);
-		return "deletesuccess";
+		return "success";
 	}
 	
 	@RequestMapping(path="createBeer.do", method = RequestMethod.GET)
