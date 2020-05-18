@@ -31,15 +31,43 @@
 </head>
 <body id="page-top">
 	<!-- Masthead-->
-	<header class="masthead beerlist"
-		style="background-image: url('resources/img/beerlistbackground.jpg')">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-md-10 mx-auto">
-					<div class="site-heading">
-						<h1>Clean Blog</h1>
-						<span class="subheading">A Blog Theme by Start Bootstrap</span>
+	<header class="masthead beerlist">
+		<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3"
+			id="mainNav">
+			<div class="container">
+				<a class="navbar-brand js-scroll-trigger" href="home.do">Home</a>
+				<button class="navbar-toggler navbar-toggler-right" type="button"
+					data-toggle="collapse" data-target="#navbarResponsive"
+					aria-controls="navbarResponsive" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto my-2 my-lg-0">
+						<li class="nav-item"><a class="nav-link js-scroll-trigger"
+							href="createBeer.do">Add a Beer</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="overlay">
+			<div class="container h-100">
+				<div
+					class="row h-100 align-items-center justify-content-center text-center">
+					<div class="col-lg-10 align-self-end">
+						<h1 class="text-uppercase text-white font-weight-bold">Beers
+							From All Over The World</h1>
+						<hr class="divider my-4" />
+					</div>
+					<div class="col-lg-8 align-self-baseline">
+						<p class="text-white-75 font-weight-light mb-5">Search For a
+							Beer</p>
+						<form action="getBeer.do">
+							<input class="text-black-75 font-weight-light mb-5" type="text" name="bid" value="search by id"></input> <input
+								class="btn btn-primary btn-md js-scroll-trigger" type="submit"
+								value="SUBMIT" />
+						</form>
 					</div>
 				</div>
 			</div>
@@ -52,11 +80,9 @@
 					<div class="col-lg-8 col-md-10 mx-auto">
 						<div class="post-preview">
 							<a href="getBeer.do?bid=${beer.id}">
-								<h2 class="post-title">${beer.name} - ${beer.style}</h2>
+								<h2 class="post-title">${beer.name}-${beer.style}</h2>
 							</a>
-							<p class="post-meta">
-								${beer.description}
-							</p>
+							<p class="post-meta">${beer.description}</p>
 							<hr>
 						</div>
 					</div>
