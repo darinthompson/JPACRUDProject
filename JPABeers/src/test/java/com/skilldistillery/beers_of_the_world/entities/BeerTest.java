@@ -32,7 +32,7 @@ class BeerTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		beer = em.find(Beer.class, 1);
+		beer = em.find(Beer.class, 2);
 	}
 
 	@AfterEach
@@ -45,7 +45,13 @@ class BeerTest {
 	@DisplayName("Test Beer mappings work")
 	void test() {
 		assertNotNull(beer);
-		assertEquals("Hot Damn", beer.getName());
+		assertEquals("Mountain Brew", beer.getName());
+		assertEquals("Foot Hill brewery", beer.getBrewery());
+		assertEquals("Dewiest Mountain Brew", beer.getDescription());
+		assertEquals(10, beer.getRating());
+		assertEquals(5.6, beer.getAbv());
+		assertEquals(56, beer.getSrm());
+		assertEquals("ipa", beer.getStyle());
 	}
 
 }
