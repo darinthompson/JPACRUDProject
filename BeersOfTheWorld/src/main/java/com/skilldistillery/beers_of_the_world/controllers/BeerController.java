@@ -19,8 +19,7 @@ public class BeerController {
 	
 	@RequestMapping(path= {"/", "home.do"})
 	public String goHome(Model model) {
-		List<Beer> beers = dao.getBeers();
-		model.addAttribute("beers", beers);
+
 		return "index";
 	}
 	
@@ -28,7 +27,11 @@ public class BeerController {
 	public String getBeer(@RequestParam("bid")int id, Model model) {
 		Beer beer = dao.findById(id);
 		model.addAttribute("beer", beer);
-		return "beerinfo";
+		if(beer == null) {
+			return "error";
+		} else {
+			return "beerinfo";
+		}
 	}
 	
 	@RequestMapping(path="deleteBeer.do")
@@ -64,6 +67,13 @@ public class BeerController {
 	@RequestMapping(path="createBeer.do", method = RequestMethod.GET)
 	public String gotToCreateBeer(Beer beer, Model model) {
 		return "addbeer";
+	}
+	
+	@RequestMapping(path="listBeers.do")
+	public String listBeers(Model model){
+		List<Beer> beers = dao.getBeers();
+		model.addAttribute("beers", beers);
+		return "beerlist";
 	}
 	
 	
