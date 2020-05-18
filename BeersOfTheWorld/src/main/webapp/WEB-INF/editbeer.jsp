@@ -1,26 +1,129 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>s
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<title>Creative - Start Bootstrap Theme</title>
+<!-- Favicon-->
+<!-- Font Awesome icons (free version)-->
+<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"
+	crossorigin="anonymous"></script>
+<!-- Google fonts-->
+<link
+	href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700"
+	rel="stylesheet" />
+<link
+	href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
+	rel="stylesheet" type="text/css" />
+<!-- Third party plugin CSS-->
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
+	rel="stylesheet" />
+<!-- Core theme CSS (includes Bootstrap)-->
+<link href="style.css" rel="stylesheet" />
 </head>
-<body>
-	<h1>Let the fun begin</h1>
-	<form action="editBeer.do" method="POST">
-		Beer Name<input type="text" value="${beer.name}" name="name" />
-		Brewery<input type="text" value="${beer.brewery}" name="brewery" />
-		Style<input type="text" value="${beer.style}" name="style" />
-		Description<input type="text" value="${beer.description}" name="description" />
-		ABV<input type="text" value="${beer.abv}" name="abv" />
-		SRM<input type="text" value="${beer.srm}" name="srm" />
-		Rating<input type="text" value="${beer.rating}" name="rating" />
-		
-		<p>${beer.id}</p>
-		<input type="hidden" name="bid" value="${beer.id}"/>
-		<input type="submit" value="SUBMIT" />
-	</form>
+<body id="page-top">
+	<!-- Masthead-->
+	<header class="masthead">
+		<div class="container h-100">
+			<div
+				class="row h-100 align-items-center justify-content-center text-center">
+				<div class="col-lg-10 align-self-end">
+					<h1 class="text-uppercase text-white font-weight-bold">New Info?</h1>
+					<hr class="divider my-4" />
+				</div>
+				<div class="col-lg-8 align-self-baseline">
+					<p class="text-white-75 font-weight-light">It's always good to update old info!</p>
+
+					<form action="editBeer.do" method="POST">
+						<div class="form-group">
+							<label class="text-white-75 font-weight-light"
+								for="exampleFormControlTextarea1">Beer Name</label> <input
+								type="text" class="form-control" id="exampleFormControlInput1"
+								value="${beer.name}" name="name">
+						</div>
+						<div class="form-group">
+							<label class="text-white-75 font-weight-light"
+								for="exampleFormControlTextarea1">Brewery</label> <input
+								class="form-control" font-weight-light" type="text"
+								class="form-control" id="Brewery" placeholder="Brewery"
+								value="${beer.brewery}" name="brewery">
+						</div>
+						<div class="form-group">
+							<label class="text-white-75 font-weight-light"
+								for="exampleFormControlTextarea1">Beer Description</label> <input
+								type="text" class="form-control" id="exampleFormControlInput1"
+								placeholder="Style" value="${beer.style}" name="style">
+						</div>
+						<div class="form-group">
+							<label class="text-white-75 font-weight-light"
+								for="exampleFormControlTextarea1">Beer Description</label>
+							<textarea class="form-control" id="exampleFormControlTextarea1"
+								placeholder="${beer.description}" rows="3" name="description"></textarea>
+						</div>
+						<div class="form-group">
+							<label class="text-white-75 font-weight-light" for="ABV">ABV</label>
+							<select class="form-control" id="ABV" name="abv">
+								<option value="1">1</option>
+								<option value="1">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10+</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label class="text-white-75 font-weight-light" for="ABV">Rating</label>
+							<select class="form-control" id="ABV" name="rating">
+								<option value="1">1</option>
+								<option value="1">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+							</select>
+						</div>
+						<div class="form-group">
+						<label class="text-white-75 font-weight-light" for="ABV">SRM(1-100)</label>
+							<input type="text" class="form-control"
+								id="exampleFormControlInput1" 
+								value="0" name="srm">
+						</div>
+						<input type="hidden" name="bid" value="${beer.id}"/>
+						<input class="btn btn-primary btn-md js-scroll-trigger" type="submit" value="SUBMIT" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</header>
+
+
+
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+	<!-- Third party plugin JS-->
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+	<!-- Core theme JS-->
+	<script src="js/scripts.js"></script>
 </body>
 </html>
